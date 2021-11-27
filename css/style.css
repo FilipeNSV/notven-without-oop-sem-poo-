@@ -1,0 +1,146 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+img {
+    display: inline-flex;
+}
+
+/*Início Header*/
+
+header {
+	width: 100%;
+	height: 200px;
+	background-color: #2C3E50;
+    position: relative;
+}
+
+header .topo {
+    display: inline;
+}
+
+header .container {
+    display: inline;
+}
+
+#logo {
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+#publicidade {
+    float: right;
+    margin-top: 25px;
+    margin-right: 25px;
+}
+
+#search {
+    position: relative;
+    float: right;
+    margin-top: 90px;
+    margin-right: 400px;
+    display: flex;
+}
+
+#searchLine {
+    width: 200px;
+    height: 30px;
+    border: none;
+}
+
+#searchButton {
+    height: 30px;
+    background: white;
+    border: none;
+
+}
+
+#menu {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    height: 30px;
+    width: 100%;   
+}
+
+#menu li {
+    display: inline;
+    margin: 8px;
+    
+}
+
+#menu li a {
+    text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	font-family: "Open_Sans";
+	padding: 10px 25px;
+    
+}
+
+/*Fim Header*/
+
+/*Início Section*/
+
+section h1 {
+    text-decoration: underline;
+	color: black;
+	font-size: 42px;
+	font-family: "Open_Sans";
+	padding: 10px 25px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+section h2 {
+    text-decoration: underline;
+	color: black;
+	font-size: 42px;
+	font-family: "Open_Sans";
+	padding: 10px 25px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#news {
+    margin-top: 22px;
+}
+
+#products {
+    margin-top: 18px;
+}
+
+section .row a {
+    text-decoration: none;
+	color: black;
+	font-size: 22px;
+    font-weight: bold;
+	font-family: "calibri";
+	padding: 10px 25px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/*Fim Section*/
+
+/*Início Footer*/
+
+footer {
+    background-color: rgb(80, 78, 78);
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+footer .container .row .col-md-4 {
+    text-decoration: none;
+	color: white;
+	font-size: 22px;
+	font-family: "Open_Sans";
+	padding: 10px 25px;
+    text-align: left;
+    margin-top: 15px;
+}
