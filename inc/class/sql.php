@@ -19,6 +19,16 @@
 
         }
 
+        public function query($rawQuery){
+
+            $stmt = $this->conn->query($rawQuery);
+
+            $stmt->execute();
+
+            return $stmt->fetchALL(\PDO::FETCH_ASSOC);
+    
+        }
+
         public function select($rawQuery){
 
             $stmt = $this->conn->select($rawQuery);
@@ -30,11 +40,5 @@
         }
 
     }
-
-    
-
-    $sql = new Sql();
-
-    $sql->select("SELECT * FROM tb_producs");
 
 ?>
