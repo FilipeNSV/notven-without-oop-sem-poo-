@@ -3,7 +3,7 @@
     $con = new PDO("mysql: host=localhost;dbname=db01", "root", "");
 
     
-    //INCLUIDO DADOS
+    //INCLUINDO DADOS
    
     $stmt = $con->prepare("INSERT INTO tb_usuarios (deslogin, dessenha) VALUES(:LOGIN, :PASSWORD)");
 
