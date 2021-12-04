@@ -1,25 +1,40 @@
 <?php
 
     require_once("header.html");
+
+    include_once("../inc/conexao.php");
+    $results_produtos = "SELECT * FROM tb_produtos";
+    $stmte = $con->prepare($results_produtos);
+    $stmte->execute();
+    
 ?>
       <section id="secao">
- 
-            <div>
-                <h2>MERCADO</h2>
-                
-            </div>
 
-            <div id="Products" class="container">
+        <div class="container">
 
-                <div class="row">
-                    <div class="col-md-4"><a href="#"><img src="../img/img1.jpg" alt=""><br><br>Processador AMD Ryzen 5 5600G, 3.9GHz (4.4GHz Max Turbo), AM4, Vídeo Integrado, 6 Núcleos - 100-100000252BOX</a></div>
-                    <div class="col-md-4"><a href="#"><img src="../img/img2.jpg" alt=""><br><br>Nintendo Switch 32GB, 1x Joycon, Neon Azul/Vermelho - HBDSKABA1</a></div>
-                    <div class="col-md-4"><a href="#"><img src="../img/img3.jpg" alt=""><br><br>Headset Gamer Redragon Scylla, Drivers 40mm, P2 - H901</a></div>
+            <div class="row">
+                <div>
+                    <h2>MERCADO</h2>
+                    
                 </div>
 
-            </div>
-        </section>
+                <?php while($row_produtos = $stmte->fetch(PDO::FETCH_ASSOC)) { ?>
+                    
+                    <div class="col-md-4">
+                        <div class="card text-center" style="width: 20rem;">
+                            <img src="../img/img.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row_produtos ["produto"]; ?></h5>
+                            <p class="card-text"><?php echo $row_produtos ["desproduto"]; ?></p>
+                            <a href="../view/prod.php?id_produto=<?php echo $row_produtos['idproduto']; ?>" class="btn btn-primary" style="background-color: #2C3E50;color: white;border: none;">Comprar!</a>
+                        </div>
+                        </div>
+                    </div>
 
+                <?php } ?>
+            </section>
+        </div>  
+    </div>             
 <?php
     require_once("footer.html");
 

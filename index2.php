@@ -14,6 +14,8 @@
     
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -84,7 +86,7 @@
                     <?php while($row_noticias = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
 
                         <div class="col-md-4">
-                            <div class="card text-center" style="width: 20rem;"><a href="#">
+                            <div class="card text-center" style="width: 20rem;"><a href="view/noti.php?id_noticia=<?php echo $row_noticias['idnoticia']; ?>">
                                     <img src="img/ntc.jpg" class="card-img-top" alt="noticia 1">
                                 <div class="card-body">
                                     <p class="card-text"><?php echo $row_noticias ["titulo"]; ?></p>
@@ -108,7 +110,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row_produtos ["produto"]; ?></h5>
                                 <p class="card-text"><?php echo $row_produtos ["desproduto"]; ?></p>
-                                <a href="view/prod.php?id_produto=<?php echo $row_produtos['idproduto']; ?>" class="btn btn-primary">Comprar!</a>
+                                <a href="view/prod.php?id_produto=<?php echo $row_produtos['idproduto']; ?>" class="btn btn-primary" style="background-color: #2C3E50;color: white;border: none;">Comprar!</a>
                             </div>
                             </div>
                         </div>

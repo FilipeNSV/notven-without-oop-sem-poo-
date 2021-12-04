@@ -1,23 +1,37 @@
 <?php
 
     require_once("header.html");
+
+    include_once("../inc/conexao.php");
+    $results_noticias = "SELECT * FROM tb_noticias";
+    $stmt = $con->prepare($results_noticias);
+    $stmt->execute();
 ?>
       <section id="secao">
           
-            <div>
-                <h1>NOTÍCIAS</h1>
-                
-            </div>
-
-            <div id="news" class="container">
-
+      <div class="container">
                 <div class="row">
-                    <div class="col-md-4"><a href="#"><img src="../img/ntc1.jpg" alt=""><br><br>Novo Snapdragon ultrapassa 1 milhão de pontos no AnTuTu</a></div>
-                    <div class="col-md-4"><a href="#"><img src="../img/ntc2.jpg" alt=""><br><br>6 consoles para comprar na Black Friday 2021</a></div>
-                    <div class="col-md-4"><a href="#"><img src="../img/ntc3.jpg" alt=""><br><br>5 streaming players para adquirir na Black Friday 2021</a></div>
-                </div>
+                    <div>
 
+                        <h1>Notícias</h1>
+                        
+                    </div>
+
+                    <?php while($row_noticias = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+
+                        <div class="col-md-4">
+                            <div class="card text-center" style="width: 20rem;"><a href="../view/noti.php?id_noticia=<?php echo $row_noticias['idnoticia']; ?>">
+                                    <img src="../img/ntc.jpg" class="card-img-top" alt="noticia 1">
+                                <div class="card-body">
+                                    <p class="card-text"><?php echo $row_noticias ["titulo"]; ?></p>
+                                </div></a>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+                </div>
             </div>
+        </div>
             
         </section>
 
