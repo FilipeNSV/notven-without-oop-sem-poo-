@@ -3,7 +3,15 @@
     $results_noticias = "SELECT * FROM tb_noticias";
     $stmt = $con->prepare($results_noticias);
     $stmt->execute();
-    $row_produtos = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+?>
+
+<?php
+    include_once("inc/conexao.php");
+    $results_produtos = "SELECT * FROM tb_produtos";
+    $stmte = $con->prepare($results_produtos);
+    $stmte->execute();
+    
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +63,7 @@
 
             <div class="container">
                 <ul id="menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="view/mercado.php">Mercado</a></li>
                     <li><a href="view/noticias.php">Notícias</a></li>
                 </ul>
@@ -65,38 +73,48 @@
         </header>
 
         <section>
-           <div id="secao">
-                <div>
-                    <h1>Notícias</h1>
-                    
-                </div>
+            <div class="container">
+                <div class="row">
+                    <div>
 
-                <div id="news" class="container">
+                        <h1>Notícias</h1>
+                        
+                    </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><a href="#"><img src="img/ntc1.jpg" alt=""><br><br>
-                            <?php echo $row_produtos['desproduto'];?></a>
+                    <?php while($row_noticias = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+
+                        <div class="col-md-4">
+                            <div class="card text-center" style="width: 20rem;"><a href="#">
+                                    <img src="img/ntc.jpg" class="card-img-top" alt="noticia 1">
+                                <div class="card-body">
+                                    <p class="card-text"><?php echo $row_noticias ["titulo"]; ?></p>
+                                </div></a>
+                            </div>
                         </div>
-                        <div class="col-md-4"><a href="#"><img src="img/ntc2.jpg" alt=""><br><br>6 consoles para comprar na Black Friday 2021</a></div>
-                        <div class="col-md-4"><a href="#"><img src="img/ntc3.jpg" alt=""><br><br>5 streaming players para adquirir na Black Friday 2021</a></div>
+
+                    <?php } ?>
+
+                    <div>
+                        
+                        <h2>Produtos</h2>
+                        
                     </div>
 
-                </div>
+                    <?php while($row_produtos = $stmte->fetch(PDO::FETCH_ASSOC)) { ?>
 
-                <div>
-                    <h2>Produtos</h2>
-                    
-                </div>
+                        <div class="col-md-4">
+                            <div class="card text-center" style="width: 20rem;">
+                                <img src="img/img.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row_produtos ["produto"]; ?></h5>
+                                <p class="card-text"><?php echo $row_produtos ["desproduto"]; ?></p>
+                                <a href="view/prod.php?id_produto=<?php echo $row_produtos['idproduto']; ?>" class="btn btn-primary">Comprar!</a>
+                            </div>
+                            </div>
+                        </div>
 
-                <div id="Products" class="container">
-
-                    <div class="row">
-                        <div class="col-md-4"><a href="#"><img src="img/img1.jpg" alt=""><br><br>Processador AMD Ryzen 5 5600G, 3.9GHz (4.4GHz Max Turbo), AM4, Vídeo Integrado, 6 Núcleos - 100-100000252BOX</a></div>
-                        <div class="col-md-4"><a href="#"><img src="img/img2.jpg" alt=""><br><br>Nintendo Switch 32GB, 1x Joycon, Neon Azul/Vermelho - HBDSKABA1</a></div>
-                        <div class="col-md-4"><a href="#"><img src="img/img3.jpg" alt=""><br><br>Headset Gamer Redragon Scylla, Drivers 40mm, P2 - H901</a></div>
-                    </div>
-
-                </div>
+                    <?php } ?>
+                </div>        
             </div>
         </section>
 
@@ -123,4 +141,3 @@
 </html>
 
 <?php?>
-

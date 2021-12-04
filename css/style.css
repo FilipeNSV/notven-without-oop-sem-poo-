@@ -137,6 +137,14 @@ section .row a {
     margin-top: 15px;
 }
 
+.nav {
+    margin-top: 45px;
+    
+}
+
+.menudet ul li a {
+    color: #495057;
+}
 /*Fim Section*/
 
 /*Início Footer*/
