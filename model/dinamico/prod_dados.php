@@ -3,7 +3,7 @@
     $con = new PDO("mysql: host=loscalhost; dbname=db01", "root", "");
 
    
-    $results_produtos = "SELECT * FROM (:TABELA) WHERE (:COLUNA)='(:IDPRODUTO)'";
+    $results_produtos = "SELECT * FROM :TABELA WHERE :COLUNA=':IDPRODUTO'";
     $stmt = $con->prepare($results_produtos);
     
     $row_produtos = $stmt->fetch(PDO::FETCH_ASSOC);

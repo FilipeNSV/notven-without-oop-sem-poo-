@@ -22,7 +22,7 @@
                     
                     <div class="col-md-4">
                         <div class="card text-center" style="width: 20rem;">
-                            <img src="../img/img.jpg" class="card-img-top" alt="...">
+                            <img src="../<?php echo $row_produtos ["imagem"]; ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row_produtos ["produto"]; ?></h5>
                             <p class="card-text"><?php echo $row_produtos ["desproduto"]; ?></p>

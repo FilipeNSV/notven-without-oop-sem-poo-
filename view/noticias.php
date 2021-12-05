@@ -21,7 +21,7 @@
 
                         <div class="col-md-4">
                             <div class="card text-center" style="width: 20rem;"><a href="../view/noti.php?id_noticia=<?php echo $row_noticias['idnoticia']; ?>">
-                                    <img src="../img/ntc.jpg" class="card-img-top" alt="noticia 1">
+                                    <img src="../<?php echo $row_noticias ["imagem"]; ?>" class="card-img-top" alt="noticia 1">
                                 <div class="card-body">
                                     <p class="card-text"><?php echo $row_noticias ["titulo"]; ?></p>
                                 </div></a>
