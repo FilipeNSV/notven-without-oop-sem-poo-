@@ -1,0 +1,26 @@
+/* Padrão tablets */
+@media only screen and (max-width: 768px) {
+
+    #imagens {
+        display: table;
+        margin-left: 115px;
+    }
+    #promo {
+        display: none;
+    }
+
+    
+}
+
+/* Padrão smartphones */
+@media only screen and (max-width: 425px) {
+    #imagens {
+        display: table;
+        margin-left: -20px;
+        
+    }
+
+    #promo {
+        display: none;
+    }
+}
