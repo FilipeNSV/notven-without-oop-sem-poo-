@@ -9,5 +9,6 @@
     $results_produtos = "SELECT * FROM tb_produtos";
     $stmte = $con->prepare($results_produtos);
     $stmte->execute();
-    
+
+  
 ?>

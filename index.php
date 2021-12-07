@@ -32,15 +32,15 @@
                             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
                                 <li class="nav-item active">
-                                    <a class="btn btn-outline-success" href="#" style="margin-left: 10px; margin-right: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <a class="btn btn-outline-success" href="index.php" style="margin-left: 10px; margin-right: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                                         <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
                                       </svg>  <span class="sr-only"></span></a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="btn btn-outline-success" href="#" style="margin-left: 10px; margin-right: 10px;">Mercado <span class="sr-only"></span></a>
+                                    <a class="btn btn-outline-success" href="view/pages/mercado.php" style="margin-left: 10px; margin-right: 10px;">Mercado <span class="sr-only"></span></a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="btn btn-outline-success" href="#" style="margin-left: 10px; margin-right: 10px;">Notícia <span class="sr-only"></span></a>
+                                    <a class="btn btn-outline-success" href="view/pages/noticias.php" style="margin-left: 10px; margin-right: 10px;">Notícias <span class="sr-only"></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -94,11 +94,13 @@
                     <?php while($row_noticias = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
 
                         <div class="col-md-4">
-                            <div class="card text-center" style="width: 20rem;"><a href="view/noti.php?id_noticia=<?php echo $row_noticias['idnoticia']; ?>">
-                                    <img src="<?php echo $row_noticias ["imagem"]; ?>" class="card-img-top" alt="noticia 1">
-                                <div class="card-body">
-                                    <p class="card-text"><?php echo $row_noticias ["titulo"]; ?></p>
-                                </div></a>
+                            <div class="card text-center" style="width: 100%; margin-top: 30px;">
+                                <a href="view/pages/noticia.php?id_noticia=<?php echo $row_noticias['idnoticia']; ?>">
+                                        <img src="<?php echo $row_noticias ["imagem"]; ?>" class="card-img-top img-thumbnail border border-dark rounded" style="width: 80%; margin-top: 10px;" alt="noticia 1">
+                                    <div class="card-body">
+                                        <h5 class="card-text"><?php echo $row_noticias ["titulo"]; ?></h5>
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
@@ -113,13 +115,13 @@
                     <?php while($row_produtos = $stmte->fetch(PDO::FETCH_ASSOC)) { ?>
 
                         <div class="col-md-4">
-                            <div class="card text-center" style="width: 20rem;">
-                                <img src="<?php echo $row_produtos ["imagem"]; ?>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $row_produtos ["produto"]; ?></h5>
-                                <p class="card-text"><?php echo $row_produtos ["desproduto"]; ?></p>
-                                <a href="view/prod.php?id_produto=<?php echo $row_produtos['idproduto']; ?>" class="btn btn-success">Comprar!</a>
-                            </div>
+                            <div class="card text-center" style="width: 100%; margin-top: 30px;">
+                               <img src="<?php echo $row_produtos ["imagem"]; ?>" class="card-img-top img-thumbnail border border-dark rounded" style="width: 80%; margin-top: 10px; margin-left: 40px;" alt="Porduto">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $row_produtos ["produto"]; ?></h5>
+                                    <p class="card-text"><?php echo $row_produtos ["desproduto"]; ?></p>
+                                    <a href="view/pages/produto.php?id_produto=<?php echo $row_produtos['idproduto']; ?>" class="btn btn-success">Comprar!</a>
+                                </div>
                             </div>
                         </div>
 
