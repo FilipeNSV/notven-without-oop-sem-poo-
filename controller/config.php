@@ -1,5 +1,5 @@
 <?php 
 
-    require_once("model/dinamico.php");
+    require_once("./model/dinamico.php");
 
 ?>

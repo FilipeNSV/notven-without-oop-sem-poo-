@@ -1,0 +1,1 @@
+[{"idusuario":"3","deslogin":"Naruto Uzumaki","dessenha":"123","dtcadastro":"2021-11-28 10:56:26"},{"idusuario":"1","deslogin":"Mario Bross","dessenha":"123","dtcadastro":"2021-11-28 10:54:32"},{"idusuario":"4","deslogin":"Escanor","dessenha":"123","dtcadastro":"2021-11-28 10:57:03"},{"idusuario":"2","deslogin":"Goku","dessenha":"123","dtcadastro":"2021-11-28 10:55:40"}]

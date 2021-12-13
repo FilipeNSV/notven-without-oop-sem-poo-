@@ -1,5 +1,12 @@
 <?php
 
-$con = new PDO("mysql: host=localhost; dbname=db01", "root", "");
+$host = "localhost";
+$port = 3306;
+$dbname = "db01";
+$user = "root";
+$password = "";
+
+
+$con = new PDO("mysql: host=$host; dbname=$dbname", "$user", "$password");
 
 ?>
