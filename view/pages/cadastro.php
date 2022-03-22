@@ -21,7 +21,7 @@
                     if($stmt->rowCount()) {
                         echo "Usuário cadastrado com sucesso!<br>";
                     } else {
-                        echo "Erro! Usuário não cadastrado com sucesso!<br>";
+                        echo "Erro! Usuário não cadastrado!<br>";
                     }
                 
                 } 

@@ -2,7 +2,7 @@
     require_once("header.html");
 ?>
 
-    <div class="container" style="margin-top: 90px; margin-bottom: 90px">
+    <div class="container" style="margin-top: 300px; margin-bottom: 90px">
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
